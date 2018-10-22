@@ -1,0 +1,82 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.arkas.smarthomecontroller.fragments.EffectsFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/RelativeLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_effect_rainbow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rainbow"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/button_effect_kitt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/button_effect_rainbow"
+                android:text="KnightRider"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/button_effect_chaser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/button_effect_kitt"
+                android:text="Chaser"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/button_effect_theater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/button_effect_chaser"
+                android:text="Theater"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <GridLayout
+                android:id="@+id/grid_layout_led_choose_effects"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_vertical"
+                android:columnCount="3">
+
+            </GridLayout>
+        </ScrollView>
+
+
+    </android.support.constraint.ConstraintLayout>
+    <!--<LinearLayout
+        android:id="@+id/led_linear_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"></LinearLayout>-->
+
+
+</FrameLayout>

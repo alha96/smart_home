@@ -1,0 +1,123 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context="com.arkas.smarthomecontroller.fragments.ColorpickerFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.flask.colorpicker.ColorPickerView
+            android:id="@+id/color_picker_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:alphaSlider="true"
+            app:density="12"
+            app:wheelType="FLOWER" />
+        <!--app:lightnessSlider="true"
+        app:lightnessSliderView="@+id/v_lightness_slider"-->
+
+
+        <!--<com.flask.colorpicker.slider.LightnessSlider
+            android:id="@+id/v_lightness_slider"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            />-->
+
+        <!--
+        <com.flask.colorpicker.slider.AlphaSlider
+            android:id="@+id/v_alpha_slider"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+            -->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <GridLayout
+                android:id="@+id/grid_layout_led_choose_colorpicker"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_vertical"
+                android:columnCount="3">
+
+            </GridLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>
+
+
+
+
+
+
+
+
+
+
+<!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.arkas.smarthomecontroller.fragments.ColorpickerFragment"
+    tools:showIn="@layout/app_bar_main">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.flask.colorpicker.ColorPickerView
+            android:id="@+id/color_picker_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:alphaSlider="true"
+            app:density="12"
+            app:wheelType="FLOWER" />
+        &lt;!&ndash;app:lightnessSlider="true"
+        app:lightnessSliderView="@+id/v_lightness_slider"&ndash;&gt;
+
+
+        &lt;!&ndash;<com.flask.colorpicker.slider.LightnessSlider
+            android:id="@+id/v_lightness_slider"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            />&ndash;&gt;
+
+        &lt;!&ndash;
+        <com.flask.colorpicker.slider.AlphaSlider
+            android:id="@+id/v_alpha_slider"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+            &ndash;&gt;
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <GridLayout
+                android:id="@+id/grid_layout_led_choose_colorpicker"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_vertical"
+                android:columnCount="3">
+
+            </GridLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>-->

@@ -1,0 +1,30 @@
+{
+  led : { //type of input (always led for rgb led strip)
+    leds : 
+     {
+       //LEDs that are changed for this request
+       //a timer would have the percentage in the end field
+       start : "double between 0 and 1, default 0",
+       end : "double between 0 and 1, default 1"
+     },
+    mode : {
+      name : "rainbow",
+      state : "int between 0 and 255"
+    },
+    mod2e: {
+      name : "static",
+      color : {
+        r : "integer 0 - 255",
+        g : "integer 0 - 255",
+        b : "integer 0 - 255"
+      },
+      blink : "0 for off | ms interval to blink",
+      transition : {
+        speed : "0 for off | ms to full transition",
+        type : "off | linear | curtain_open | curtain_cloes | dim | dim_black"
+      }
+      //ideas: pulse (show that working), blink single LED (show that working)
+    }
+  }
+  
+}

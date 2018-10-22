@@ -1,0 +1,101 @@
+% Einbinden von Variablen (Titel, Autor, usw.)
+\input{../includes/_meta}
+\documentclass[
+	12pt,			% Schriftgröße
+	DIV14,			% Standard
+	ngerman,		% Sprache
+	a4paper,		% Papierformat
+	titlepage,		% Es wird eine Titelseite verwendet
+%	twoside,		% Zweiseitiges Layout
+%	BCOR=10mm,		% 10mm für Bindung berücksichtigen
+	parskip=half,	% Halber Zeilenabstand
+%	lists=totoc,		% Verzeichnisse im Inhaltsverzeichnis aufführen
+	bibliography=totoc,		% Literaturverzeichnis im Inhaltsverzeichnis aufführen
+%	idx=totoc,		% Index im Inhaltsverzeichnis aufführen
+	final			% Abschließend
+]{scrreprt}
+
+% Einbinden aller Pakete
+\input{../includes/packages}
+
+\input{../includes/colors}
+
+% Einbinden des Seitenlayouts
+\input{../includes/seitenlayout}
+
+% Neue Commands
+\input{../includes/newcommands}
+
+% Abkürzungsverzeichnis
+\input{../includes/glossar}
+
+\begin{document}
+
+		\input{../includes/deckblatt}
+
+		\input{../includes/deckblatt2}
+		
+		% Römische nummerierung
+		\pagenumbering{Roman}
+		
+			% Ehrenwörtliche Erklärung
+			%\input{../chapters/erklaerung}
+			
+			%\input{../chapters/danksagungen}
+			
+			% Abstact
+			%\input{../chapters/abstract}
+			
+			% Inhaltsverzeichnis
+			\tableofcontents
+			
+			% Abbildungsverzeichnis
+			%\listoffigures
+			
+			% Tabellenverzeichnis					
+			%\listoftables					
+			
+			% CodeVerzeichnis
+			%\listoflistings	
+			
+			% weiter in normalen arabischen Ziffern
+			\clearpage
+			
+		\pagenumbering{arabic}
+		
+			\input{../chapters/einleitung}
+			\input{../chapters/grundlagen}
+			\input{../chapters/anforderungen}
+			\input{../chapters/implementierung}
+			\input{../chapters/ablauf}
+			
+			\input{../chapters/schluss}
+			
+			
+			
+			\clearpage
+			
+		\pagenumbering{roman}
+			
+			\bibliographystyle{plaindin}
+			\bibliography{../bibliography/bib_smarthome}
+			
+			\glsaddall
+			
+			%\newpage
+			%\printglossary[type=\acronymtype, toctitle=Abkürzungen, title=Abkürzungen]
+			%\newpage
+			%\printglossary[title=Glossar, toctitle=Glossar, style=altlist]
+
+			%\layout
+
+			\appendix
+
+			%\input{../appendix/appendix}
+
+			%\input{../chapters/Anhang/bilder}
+
+			%\input{../chapters/Anhang/dokumente}
+			
+
+\end{document}

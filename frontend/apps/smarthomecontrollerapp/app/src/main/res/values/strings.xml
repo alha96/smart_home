@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SmartHomeController</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="not_connected">Not connected to MQTT Broker!</string>
+    <string name="settings_saved">Settings successfully saved!</string>
+
+    <string name="mqtt_connection_parameter">MQTT Connection Parameter</string>
+
+    <string name="default_ip">192.168.178.44</string>
+    <string name="default_port">1883</string>
+</resources>

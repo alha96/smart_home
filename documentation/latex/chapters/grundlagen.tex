@@ -1,0 +1,24 @@
+\chapter{Grundlagen}
+Um die weiteren Betrachtungen nachvollziehen zu können, werden an dieser Stelle die nötigen Grundlagen dargestellt.
+
+\section{Message-Broker und MQTT} \label{introMQTT}
+
+\textit{Message-Broker} gehören zu den nachrichtenorientieren Middlewares und sind Server- Anwendungen, die Nachrichten empfangen und weiterleiten. Dabei kann eine Umwandlung des Protokolls des Senders in ein für den Empfänger verständliches Protokoll geschehen. \\
+\textit{Message Queue Telemetry Transport (MQTT)} ist ein Publish/Subscribe Messaging Transport Protokoll, das von einem Message Broker verwendet werden kann. Es ist leichtgewichtig, einfach aufgebaut, einfach zu implementieren und steht zur freien Verfügung. Damit soll gewährleistet werden, dass es vor allem für IoT-Anwendungen und für Machine-to-Machine (M2M)-Anwendungen geeignet ist, da hier häufig eine geringe Netzwerkbandbreite zur Verfügung steht. Als zugrundeliegendes Protokoll wird TCP/IP verwendet. \\
+Das Publish/Subscribe-Verfahren funktioniert folgendermaßen:
+\begin{description}
+	\item[Publisher] Dieser Teilnehmer ist die sendende Instanz im Netzwerk. Jede Nachricht wird einer bestimmten Kategorie, auch Topic genannt, zugeordnet. Der Sender weiß dabei nicht, wer die Nachricht empfangen wird.
+	\item[Subscriber] Der Subscriber oder Empfänger empfängt alle Nachrichten, zu deren Topic er sich beim Message-Broker registriert hat. Dieser Teilnehmer hat keine Kenntnis über die Herkunft der Nachricht.
+	\item[Broker] Diese Instanz ist der Vermittler zwischen Publisher und Subscriber. Er empfängt alle Nachrichten und stellt sie allen relevanten Empfänger zu. 
+\end{description}
+Bei der Verwendung von MQTT gibt es drei Stufen des Quality of Service (QoS):
+\begin{enumerate}
+	\item QoS Level 0: Dieses Level agiert nach dem Ansatz \gf{At most once}, d.h. jede Nachricht wird maximal einmal zugestellt und sollte dies fehlschlagen, erfolgt keine erneute Zustellung. Dementsprechend können Nachrichten verloren gehen.
+	\item QoS Level 1: Die unter dem Ansatz \gf{At least once} bekannte Stufe stellt Nachrichten mindestens einmal zu, wobei mehrmalige Zustellung nicht ausgeschlossen ist.
+	\item QoS Level 2: Der \gf{Exactly once}-Ansatz stellt jede Nachricht genau einmal zu.
+\end{enumerate}
+Die Spezifikation von MQTT Version 3.1.1 ist unter \cite{mqtt_spec} verfügbar.
+
+\section{Digitale LEDs}
+Digitale LEDs erlauben es mit nur einem Datenkanal mehrere LEDs unterschiedlich anzusteuern. Dies wird durch den Einsatz eines Chips für jede LED möglich, der nur die für ihn relevanten Daten extrahiert und anzeigt. Hierdurch ergibt sich nicht nur die Möglichkeit, manuell jede LED mit einer bestimmten Farbe anzusteuern, sondern auch Effekte wie Lauflicht oder Regenbogen sind umsetzbar.\\
+Für dieses Projekt wurde sich für WS2812B 5050 SMD LEDs entschieden, da diese einfach über Libraries mit dem Mikrocontroller ansteuerbar und verhältnismäßig kostengünstig sind. Zum Ansteuern dieser LEDs kann die populäre Arduino Library \gf{Adafruit Neopixels} verwendet werden.

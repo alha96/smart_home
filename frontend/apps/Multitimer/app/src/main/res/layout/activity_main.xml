@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    tools:context="com.psudhaus.multitimer.multitimer.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:id="@+id/ll_btn_right"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentRight="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:weightSum="2">
+
+                <ImageButton
+                    android:src="@drawable/ic_pause"
+                    android:id="@+id/btn_opt_pause"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    android:layout_margin="15dp"
+                    style="@style/ButtonRight"/>
+
+                <ImageButton
+                    android:src="@drawable/ic_add"
+                    android:id="@+id/btn_add_timer"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="15dp"
+                    android:scaleType="fitXY"
+                    style="@style/ButtonRight"/>
+            </LinearLayout>
+            <Button
+                android:text="+ 0:10"
+                android:id="@+id/btn_add_time_0010"
+                style="@style/ButtonRight"/>
+            <Button
+                android:text="+ 1:00"
+                android:id="@+id/btn_add_time_0100"
+                style="@style/ButtonRight"/>
+            <Button
+                android:text="+ 5:00"
+                android:id="@+id/btn_add_time_0500"
+                style="@style/ButtonRight"/>
+            <Button
+                android:text="+ 20:00"
+                android:id="@+id/btn_add_time_2000"
+                style="@style/ButtonRight"/>
+            <Button
+                android:text="- 1:00"
+                android:id="@+id/btn_add_time_n0100"
+                style="@style/ButtonRight"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+
+
+        <ImageButton
+            android:src="@drawable/ic_reset"
+            style="@style/ButtonRight"
+            android:id="@+id/btn_opt_reset"
+            android:layout_weight="1"
+            android:layout_width="wrap_content" />
+
+        <ImageButton
+            android:src="@drawable/ic_delete"
+            android:layout_weight="1"
+            style="@style/ButtonRight"
+            android:id="@+id/btn_opt_delete"
+            android:layout_width="wrap_content"/>
+
+      <!--  <ImageButton
+            android:src="@drawable/ic_pause"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_opt_pause"
+            style="@style/ButtonRight"/>
+-->
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridView1"
+        android:numColumns="auto_fit"
+        android:horizontalSpacing="2dp"
+        android:verticalSpacing="2dp"
+        android:gravity="center"
+        android:layout_toLeftOf="@id/ll_btn_right"
+        android:columnWidth="300dp"
+        android:descendantFocusability="beforeDescendants"
+        android:stretchMode="columnWidth"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+    </GridView>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:id="@+id/nameSelection"
+        android:visibility="gone"
+        android:background="@color/colorAccent">
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameSelInputText"
+            android:gravity="center_horizontal"
+            android:hint="New Timer Name"
+            />
+        <ListView
+            android:id="@+id/nameSelectionList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/nameSelInputText"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/mqtt_connection_parameter"
+        android:key="pref_mqtt_parameter">
+
+        <EditTextPreference
+            android:key="pref_ip"
+            android:defaultValue="192.168.178.44"
+            android:singleLine="false"
+            android:summary="of the MQTT server"
+            android:textColor="@android:color/black"
+            android:title="IP"
+            android:visibility="visible"
+            android:inputType="number"
+            android:digits="0123456789."/>
+
+        <EditTextPreference
+            android:defaultValue="1883"
+            android:key="pref_port"
+            android:singleLine="false"
+            android:summary="of the MQTT server"
+            android:textColor="@android:color/black"
+            android:title="Port"
+            android:visibility="visible"
+            android:inputType="number"
+            android:digits="0123456789."/>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,153 @@
+% F�r umbr�che
+\usepackage[ngerman]{babel}
+
+% Umlaute
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Es k�nnen Tabellen erstellt werden, die eine feste Gesamtbreite haben
+\usepackage{tabularx}
+\usepackage{tabulary}
+
+\usepackage{layout}
+
+% Euro-Zeichen etc
+\usepackage{textcomp}
+
+% Grafiken
+\usepackage[dvips,final]{graphicx}
+% Dort liegen die Bilder des Dokuments
+\graphicspath{{images/}}
+% Zum Umflie�en von Bildern
+\usepackage{floatflt}
+
+\usepackage[numbers, square]{natbib}
+
+% Caption �ber der Tabelle / dem Code
+\usepackage{floatrow}
+\usepackage{tabu}
+
+\usepackage{longtable}
+
+\usepackage{dirtree}
+
+\usepackage{fancyvrb}
+
+%Definition der Farben in includes/colors
+\usepackage[usenames,dvipsnames,table]{xcolor} 
+
+% Package zum formatieren von Code
+%\usepackage[chapter]{minted}
+
+% Zum Einbinden von Programmcode
+\usepackage{listings}
+
+% Einstellungen f�r Listings, kann wahrscheinlich weg???
+\lstset{%
+    float=hbp,%
+    basicstyle=\texttt\small, %
+    identifierstyle=\color{colIdentifier}, %
+    keywordstyle=\color{colKeys}, %
+    stringstyle=\color{colString}, %
+    commentstyle=\color{colComments}, %
+    columns=flexible, %
+    tabsize=2, %
+    frame=single, %
+    extendedchars=true, %
+    showspaces=false, %
+    showstringspaces=false, %
+    numbers=left, %
+    numberstyle=\tiny, %
+    breaklines=true, %
+    backgroundcolor=\color{hellgelb}, %
+    breakautoindent=true, %
+%    captionpos=b%
+}
+
+
+% Abk�rzungen
+\usepackage{acronym}
+
+% F�r Index-Ausgabe; \printindex
+\usepackage{makeidx}
+
+% Einfache Definition der Zeilenabst�nde und Seitenr�nder etc.
+\usepackage{setspace}
+\usepackage[top=3cm, bottom=3.5cm]{geometry}
+
+\usepackage[
+	automark,		% Kapitelangaben in Kopfzeile automatisch erstellen
+	headsepline,	% Trennlinie unter Kopfzeile
+	ilines			% Trennlinie linksb�ndig ausrichten
+]{scrlayer-scrpage}
+
+% PDF-Optionen
+\usepackage[
+	bookmarks,
+	bookmarksopen=true,
+	pdftitle={\titel},
+	pdfauthor={\pdfautor},
+	pdfcreator={\pdfautor},
+	pdfsubject={\titel},
+	pdfkeywords={\tags},
+	colorlinks=true,
+	linkcolor=magenta, 		% einfache interne Verkn�pfungen
+	%linkcolor=black,
+	anchorcolor=green,		% Ankertext
+	citecolor=dhbwred,			% Verweise auf Literaturverzeichniseintr�ge im Text
+	%citecolor=black,
+	filecolor=magenta, 		% Lokale Dateien
+	%filecolor=black,
+	menucolor=compred,
+	%menucolor=black, 		% Acrobat-Men�punkte
+	urlcolor=cyan,
+	%urlcolor=black, 
+	plainpages=false,		% zur korrekten Erstellung der Bookmarks
+	pdfpagelabels,			% zur korrekten Erstellung der Bookmarks
+	hypertexnames=false,	% zur korrekten Erstellung der Bookmarks
+	linktocpage 			% Seitenzahlen anstatt Text im Inhaltsverzeichnis verlinken
+]{hyperref}
+
+% URL 
+\usepackage{url}
+
+% G�nsef��chen mit \enquote{text}
+\usepackage{csquotes}
+
+% F�r die Chapter Formatierung 
+\usepackage{blindtext, color}
+
+% Zum fortlaufenden Durchnummerieren der Fu�noten
+%\usepackage{chngcntr}
+
+% Eigene Caption Definition mit Style
+\usepackage{caption}
+
+% Eigene Subcaption Definition mit Style
+\usepackage{subcaption}
+
+% Chapterstyle
+\usepackage[explicit]{titlesec}
+\usepackage{lmodern}
+
+\usepackage{todonotes}
+
+%https://en.wikibooks.org/wiki/LaTeX/Glossary
+\usepackage[	 
+	toc,   
+	%xindy,
+	%nomain,
+	nopostdot,
+	%Zahl, die Kapitel anzeigt, in dem das Wort gebraucht wurde
+	nonumberlist,
+	seeautonumberlist,
+	acronym]      
+{glossaries}
+
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+\makeglossaries
+
+\makeindex

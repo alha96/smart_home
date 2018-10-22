@@ -1,0 +1,4 @@
+Install MQTT Server:
+http://www.steves-internet-guide.com/install-mosquitto-broker/
+A ready-to-use-server provided by Steve (filename: mos1.14). Contains all needed files in the right place.
+http://www.steves-internet-guide.com/downloads/

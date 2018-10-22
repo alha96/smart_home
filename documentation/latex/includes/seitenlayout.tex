@@ -1,0 +1,145 @@
+% Zeilenabstand auf 1,5
+\onehalfspacing
+
+% Nummerierungstiefe
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+% Kopf- und Fußzeile
+\pagestyle{scrheadings}
+
+% Kopf- und Fußzeile auch auf Kapitelanfangsseiten
+\renewcommand*{\chapterpagestyle}{scrheadings}
+
+%Verzeichnis für Programmcode
+%\renewcommand{\listoflistingscaption}{Quellcodeverzeichnis}
+%\renewcommand{\listingscaption}{Code}
+
+% Schriftform der Kopfzeile
+\renewcommand{\headfont}{\normalfont}
+
+% Damit Programmcode auch über mehrere Seiten hinweg eingefügt werden kann
+%\newenvironment{code}{\captionsetup{type=listing}}{}
+
+% Schusterjungen und Hurenkinder vermeiden
+\clubpenalty = 10000 %
+\widowpenalty = 10000 
+\displaywidowpenalty = 10000
+
+% Table
+%\taburulecolor{dhbwred!60}
+%\rowcolors{1}{}{lightdhbwred}
+
+% Größe der Kapitelnummer
+\newlength\chapnumb
+\setlength\chapnumb{4cm}
+
+% Neue Definition für Chapter
+\titleformat{\chapter}[block]
+{\color{magenta}\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \fontsize{120}{110}\selectfont\thechapter}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \color{dhbwgrey}
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+    
+% Neue Definition für Chapter ohne Nummerierung
+\titleformat{name=\chapter,numberless}[block]
+{\color{dhbwgrey}\normalfont\sffamily}{}{0pt}
+{\parbox[b]{\chapnumb}{%
+   \mbox{}}%
+  \parbox[b]{\dimexpr\textwidth-\chapnumb\relax}{%
+    \raggedleft%
+    \hfill{\LARGE#1}\\
+    \rule{\dimexpr\textwidth-\chapnumb\relax}{0.4pt}}}
+
+
+% Neue Definition für Section
+\titleformat{\section}
+{\color{dhbwgrey}\normalfont\Large\bfseries}
+{\color{magenta}\thesection}{1em}{#1}
+
+% Neue Definition für Subsection
+\titleformat{\subsection}
+{\color{dhbwgrey}\normalfont\large\bfseries}
+{\color{magenta}\thesubsection}{1em}{#1}
+
+% Neue Definition für Subsubsection
+\titleformat{\subsubsection}
+{\color{dhbwgrey}\normalfont\normalsize\bfseries}
+{\color{magenta}\thesubsubsection}{1em}{#1}
+
+\titleformat{\paragraph}
+{\color{dhbwgrey}\normalfont\normalsize\bfseries}
+{}{0em}{\textit{#1}}
+
+% Caption über der Tabelle / dem Code
+%\floatsetup[listing]{style=Plaintop}
+%\floatsetup[figure]{style=Plaintop}
+%\floatsetup[table]{capposition=top}
+
+% Kopfzeile
+%Kopfzeile innen
+\ihead{
+	\textit{
+		\textsc{\headmark}
+	}
+}
+%Kopfzeile Mitte
+\chead{}
+% Kopfzeile außen - Logo
+\ohead{
+	\includegraphics[scale=0.03]{../images/hftl_logo}\hspace{1.9cm}
+}
+\setlength{\headheight}{10mm} % Höhe der Kopfzeile
+
+\setheadwidth[10pt]{textwithmarginpar} % Kopfzeile über den Text hinaus verarbeiten
+\setheadsepline[text]{0.4pt} % Trennlinie unter Kopfzeile
+
+\ifoot {
+	\textit{\footautor} %Name des Kurses
+}
+\cfoot{}
+\ofoot{
+	\pagemark
+}
+\setfootsepline[text]{0.4pt} % Trennlinie über Fußzeile
+
+% Neue Caption Definition
+%\DeclareCaptionFont{white}{\color{dhbwgrey}}
+%\DeclareCaptionFormat{}{\colorbox{lightdhbwgrey}{\parbox{\textwidth}{#1 #2#3}}}
+%\captionsetup{format=listing,labelfont=white,textfont=white}
+
+% Neue Subcaption Definition
+%\DeclareCaptionFont{normal}{\color{dhbwgrey}}
+%\DeclareCaptionFormat{subfig}{\parbox{\textwidth}{#1 #2#3}}
+%\captionsetup[sub]{format=subfig, labelfont=normal, textfont=normal}
+
+\definecolor{quotationcolour}{HTML}{F0F0F0}
+\definecolor{quotationmarkcolour}{HTML}{1F3F81}
+
+% Quotation
+% Massively humongous opening quotation mark.
+\newcommand{\hugequote}{%
+  \fontsize{42}{48}\selectfont \color{magenta} \textbf{``}
+  \vskip -.5em
+}
+
+% Beautify quotations.
+\newcommand{\epigraph}[2]{%
+  \begin{center}
+  \colorbox{lightdhbwred}{%
+    \parbox{.9\textwidth}{%
+    	\hrule \vskip 1em {\hugequote} \vskip -.5em
+    	\parindent 2.2em
+    	#1\begin{flushright}\textsc{#2}\end{flushright}
+    	\hrule
+    }
+  }
+  \end{center}
+  \bigskip
+}
+
+\renewcommand{\glsnamefont}[1]{\textcolor{dhbwgrey}{#1}}

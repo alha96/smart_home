@@ -1,0 +1,12 @@
+\chapter{Ablauf des Projektes}
+
+\section{Projektorganisation}
+Das Projekt wurde von Patrick Sudhaus und Alexander Hatzold verwirklicht. Aufgrund der geringen Dienstwege wurde keine besondere Form der Projektorganisation gewählt. Die Anforderungen wurden initial festgelegt und dann gemeinsam umgesetzt.
+
+\section{Technische Schwierigkeiten \& deren Lösung}
+
+\subsection{Verwendung einer Microcontroller MQTT Library}
+Ein Problem, welches bei der Implementierung des Mikrocontroller Programms aufgetreten ist, war die Entscheidung die Adafuit\_MQTT\_Library zu verwenden. Diese Library beschränkt MQTT Nachrichten auf eine Länge von 128 Bytes pro Nachricht. Die JSON-Nachrichten überschreiten manchmal diese Größe, sodass nicht die gesamte Nachricht übermittelt wird und somit nicht verarbeitbar ist. Da auch Anpassung der Library nicht erfolgreich war musste eine andere Library verwendet werden. Die Library \textit{pubsubclient}\footnote{\url{https://pubsubclient.knolleary.net/}} hat eine viel höhere Längenbeschränkung, wodurch sie für den use-case geeignet ist. Ein Problem beim PubSub Client sind die fehlenden QOS Level eins und zwei bei ausgehenden Nachrichten. Das heißt, dass es möglich ist, dass Nachrichten unbemerkt nicht ankommen können (siehe \ref{introMQTT}). Da die Mikrocontroller nur Nachrichten empfangen ist dies aktuell nicht relevant.
+
+\subsection{Fehlende Nebenläufigkeit auf den Microcontrollern}
+Da die Microcontroller basierend auf ESP8266 keine Nebenläufigkeit unterstützen, musste sich für bestimmte Funktionalitäten eine andere Lösung überlegt werden, um gleichzeitig einen Befehl auszuführen (z.B. LED Lauflicht Effekte) und gleichzeitig andere Befehle zu erhalten (z.B. neue Nachrichten vom MQTT Broker empfangen) und zu starten. Die Parallelität wurde deswegen teilweise auf die Serverkomponente \textit{Home Manager} (siehte Abschnitt \ref{home_manager}) ausgelagert, sodass alle gewünschten Funktionen realisierbar sind.
